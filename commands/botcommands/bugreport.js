@@ -13,6 +13,14 @@ module.exports.run = (client, message, args) => {
     .setTimestamp()
     .setFooter(`Shion Bot ${client.config.v} by TeamShion`, `${botA}`)
 
-    canal.send(embed)
+    const embed2 = new Discord.MessageEmbed()
+    .setAuthor(`Reporte de bug enviado`, `${botA}`)
+    .setColor(`${client.config.cor}`)
+    .setDescription(`Seu Reporte de Bug foi enviado para o [Servidor de suporte](https://discord.gg/NjfeECe).`)
+    .setTimestamp()
+    .setFooter(`Obrigado por usar nosso bot - assinado: TeamShion`, `${botA}`)
 
+    canal.send(embed).then(msg => {
+        message.channel.send(embed2)
+    })
 }

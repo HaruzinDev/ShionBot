@@ -31,7 +31,7 @@ client.fun = new Enmap();
 client.moderation = new Enmap();
 client.xp_system = new Enmap();
 client.economy_system = new Enmap();
-client.developer = new Enmap();
+client.botcommands = new Enmap();
 
 client.config = config;
 client.cmdsN = cmds
@@ -149,14 +149,14 @@ fs.readdir("./commands/economy_system/", (err, files) => {
   });
 });
 
-fs.readdir("./commands/developer/", (err, files) => {
+fs.readdir("./commands/botcommands/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
-    let props = require(`./commands/developer/${file}`);
+    let props = require(`./commands/botcommands/${file}`);
     let commandName = file.split(".")[0];
     console.log(`carregado o comando: ${commandName}`);
-    client.developer.set(commandName, props);
+    client.botcommands.set(commandName, props);
   });
 });
 
@@ -194,45 +194,6 @@ client.on("guildMemberAdd", async (member) => {
   member.roles.add(tag)
 
 }, parseInt(1000));
-});
-
-
-
-
-
-
-
-
-
-
-client.on("guildMemberRemove", (member) => {
-
-  let db = client.database.ref(`Servidores/S${member.guild.id}/painel/sistemxp/perfis/M${member.id}`);
-
-  db.once("value").then(async function(snap) {
-
-    if(snap.val() == null){
-
-      return;
-    } else {
-
-      let membro = snap.val().marry
-      if(!membro) return db.remove()
-      
-  let db2 = client.database.ref(`Servidores/S${member.guild.id}/painel/sistemxp/perfis/M${membro}`);
-
-  db2.once("value").then(async function(snap) {
-
-      db2.update({
-
-        marry: null
-
-      })
-      
-      db.remove()
-    })
-    }
-  })
 });
 
 client.login(tokens.token);

@@ -69,7 +69,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(client.config.cor)
     .setAuthor('Cartinha:', `${botA}`)
     .setDescription(`Você foi desmutado! Se você aprontar de novo vou mandar cartinha pra você novamente <:denkitabraba:741332615239303288>`)
-    .setThumbnail('https://i.imgur.com/B3vFy68.png')
+    .setThumbnail(`${client.config.letter}`)
     .setTimestamp()
     .setFooter(`Shion Bot ${client.config.v} by TeamShion`, `${botA}`)
 
@@ -91,7 +91,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(client.config.cor)
     .setAuthor('Cartinha:', `${botA}`)
     .setDescription(`Você foi mutado por este motivo:\n***${reason}***`)
-    .setThumbnail('https://i.imgur.com/B3vFy68.png')
+    .setThumbnail(`${client.config.letter}`)
     .setTimestamp()
     .setFooter(`Shion Bot ${client.config.v} by TeamShion`, `${botA}`)
     

@@ -46,7 +46,7 @@ module.exports.run = async (client, message, args) => {
 	.setColor(client.config.cor)
 	.setAuthor('Banimento', `${fotoA}`)
     .setDescription('Registro de banimento')
-    .setThumbnail('https://i.imgur.com/6WoPZDe.png')
+    .setThumbnail('https://cdn.discordapp.com/emojis/568556526541864970.gif?v=1')
 	.addFields(
 		{ name: 'Autor do banimento:', value: `<@${staff}>`, inline: true },
         { name: 'Usuario banido:', value: `Nick: ${pessoa1.tag}\nid: ${pessoa1.id}`, inline: true },
@@ -61,7 +61,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(client.config.cor)
     .setAuthor('Cartinha:', `${botA}`)
     .setDescription(`Você foi banido por este motivo:\n***${reason}***`)
-    .setThumbnail('https://i.imgur.com/B3vFy68.png')
+    .setThumbnail(`${client.config.letter}`)
     .setTimestamp()
     .setFooter(`Shion Bot ${client.config.v} by TeamShion`, `${botA}`)
 

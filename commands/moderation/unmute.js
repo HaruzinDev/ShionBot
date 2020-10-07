@@ -31,7 +31,7 @@ exports.run = (client, message, args) => {
     .setColor(client.config.cor)
     .setAuthor('Cartinha:', `${botA}`)
     .setDescription(`Você foi desmutado! Se você aprontar de novo vou mandar cartinha pra você novamente >:c`)
-    .setThumbnail('https://i.imgur.com/B3vFy68.png')
+    .setThumbnail(`${client.config.letter}`)
     .setTimestamp()
     .setFooter(`Shion Bot ${client.config.v} by TeamShion`, `${botA}`)
 

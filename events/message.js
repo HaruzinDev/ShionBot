@@ -5,7 +5,7 @@ module.exports = (client, message) => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return message.author.send('Olá pessoa. Infelizmente eu não respondo DM. Use algum comando apenas em servidor oq?')
 
-  let db = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/activad`)
+  let db = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/actived`)
 
   db.once("value").then(async function(snap) {
 
@@ -26,7 +26,7 @@ module.exports = (client, message) => {
 
   const cmdadministrator = client.administrator.get(command);
   const cmdconfigurate = client.configurate.get(command);
-  const cmddeveloper = client.developer.get(command);
+  const cmdbotcommands = client.botcommands.get(command);
   const cmdeconomy_system = client.economy_system.get(command);
   const cmdfun = client.fun.get(command);
   const cmdmoderation = client.moderation.get(command);
@@ -64,9 +64,9 @@ module.exports = (client, message) => {
 
     cmdadministrator.run(client, message, args)
 
-  } else if(cmddeveloper){
+  } else if(cmdbotcommands){
     
-    cmddeveloper.run(client, message, args)
+    cmdbotcommands.run(client, message, args)
 
   } else {
     
