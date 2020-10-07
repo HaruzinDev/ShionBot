@@ -78,3 +78,23 @@ module.exports.perfilIC = async (client, message, idu, xp, level, bgI, cookie, s
   })
  })
 }
+
+// Make image Ship
+
+module.exports.ship = async (client, message, aut , menção, autAvatar, mençãoAvatar) => {
+    let aleatorio = Math.floor(Math.random() * 100);
+
+    let fundo = await jimp.read(`${client.config.basesw}`);
+    let fonte = await jimp.loadFont(jimp.FONT_SANS_32_BLACK)
+    let mençãoALoaded = await jimp.read(`${mençãoAvatar}`);
+
+    jimp.read(autAvatar).then(avatar => {
+        mençãoALoaded.resize(128, 128)
+        fundo.print(fonte, 160, 40, `${aleatorio}%`)
+        fundo.composite(mençãoALoaded, 256,0)
+        fundo.composite(avatar, 0, 0).write('./images/ship.png')
+
+        sendimage.shipIN(client, message, aut, menção)
+    })
+    
+}

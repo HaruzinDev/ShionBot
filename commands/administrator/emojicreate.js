@@ -1,9 +1,6 @@
-module.exports.run = (client, message) => {
+module.exports.run = async (client, message, args) => {
 
-
-if(!message.author.id === "638157424099852288") return message.channel.send('Eita... Sabia que voc� acabou de achar um comando escondido?\n� uma pena voc� n�o poder usa-lo.')
-
-let vezes = 0
+    let vezes = 0
 message.channel.send('Envie a imagem agora (tem até 60 segundos para enviar).')
 
 const filter = m => m.attachments && m.author.id === message.author.id;
@@ -18,15 +15,21 @@ collector.on('collect', m => {
 
   let final = Attachment[0].url.endsWith(".png") || Attachment[0].url.endsWith(".jpg") || Attachment[0].url.endsWith(".gif")
 
-  if(!final) return message.channel.send('Seu arquivo tem que ser em png, jpg ou gif')
+  if(!final) return message.channel.send('Seu arquivo tem que ser em png ou jpg')
   let link1 = Attachment[0].url;
   const imgurUploader = require('imgur-uploader');
  
-  imgurUploader(link1, {title: 'Upload by ShionBot!'}).then(data => {
+  imgurUploader(link1, {title: 'Upload Shion!'}).then(data => {
         
   let image = data.link;
-  message.channel.send(`Link gerado com sucesso: ${image}`)
-  })
+
+
+    message.guild.emojis.create(image, args[0]).then(emoji => {
+        message.channel.send(`**O emoji foi adicionado com sucesso!**\n\nemoji: ${emoji}\nCodigo: \\${emoji}`)
+        vezes++;
+    })
+
+   })
   }
-});
+ })
 }

@@ -16,7 +16,7 @@ db.once("value").then(async function(snap) {
   
     let embed = new Discord.MessageEmbed()
     .setColor(`${client.config.cor}`)
-    .author(`Novo Membro!!`, `${member.avatarURL({ dynamic: true, format: 'png', size: 2048 })}`)
+    .author(`Novo Membro!!`, `${member.user.avatarURL({ dynamic: true, format: 'png', size: 2048 })}`)
     .setThumbnail(`${member.avatarURL({ dynamic: true, format: 'png', size: 2048 })}`)
     .setDescription(``)
     .setImage(``)
@@ -27,14 +27,24 @@ db.once("value").then(async function(snap) {
 
     }
 })
+ 
+let db2 = client.database.ref(`Servidores/S${member.guild.id}/painel/configuração/autorole`)
 
+db2.once("value").then(async function(snap) {
+  
+  if(snap.val() == null) {
 
+  return;
+  } else {
+    let autorole = snap.val().autorole
 setTimeout(function () {
 
-    let tag = member.guild.roles.cache.get("681706134628728862")
+    let tag = member.guild.roles.cache.get(autorole)
     if(!tag) return;
     if(member.roles.cache.has(tag.id)) return;
     member.roles.add(tag)
   
   }, parseInt(1000));
+}
+})
 }

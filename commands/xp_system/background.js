@@ -56,10 +56,4 @@ collector.on('collect', m => {
 
     }
 });
-
-collector.on('end', collected => {
-    if(vezes === 0) {
-        message.channel.send('Tempo de envio esgotado...')
-    }
-});
 }

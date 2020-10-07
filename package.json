@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "-": "0.0.1",
+    "@vitalets/google-translate-api": "^4.0.0",
     "discloud-status": "^0.1.6",
     "discord.js": "^12.2.0",
     "enmap": "^5.3.1",
@@ -14,8 +15,10 @@
     "jimp": "^0.13.0",
     "moment": "^2.27.0",
     "ms": "^2.1.2",
+    "nekos.life": "^2.0.7",
     "quick.db": "^7.1.2",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "superagent": "^6.1.0"
   },
   "devDependencies": {},
   "scripts": {

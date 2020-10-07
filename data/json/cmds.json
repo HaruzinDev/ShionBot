@@ -71,6 +71,26 @@
 
 "fun": [
     {
+        "nome": "ship",
+        "usage": "ship <id/menção 1> <id/menção 2>",
+        "description": "Shipa uma pessoa com outra"
+    },
+    {
+        "nome": "hug",
+        "usage": "hug <id/menção>",
+        "description": "Abrace uma pessoa."
+    },
+    {
+        "nome": "kiss",
+        "usage": "kiss <id/menção>",
+        "description": "Beije uma pessoa"
+    },
+    {
+        "nome": "pat",
+        "usage": "pat <id/menção>",
+        "description": "Acaricie uma pessoa"
+    },
+    {
         "nome": "cookie",
         "usage": "cookie <id/menção>",
         "description": "Dê cookie a um membro de agradecimento"
@@ -84,6 +104,11 @@
         "nome": "marry",
         "usage": "marry <id/menção>",
         "description": "Comando para se casar com alguém"
+    },
+    {
+        "nome": "pick",
+        "usage": "pick <mensagem dividida por | mensagem>",
+        "description": "Deixe que a Shion decida por você!"
     }
 ],
 
