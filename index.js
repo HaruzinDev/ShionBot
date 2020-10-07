@@ -31,7 +31,7 @@ client.fun = new Enmap();
 client.moderation = new Enmap();
 client.xp_system = new Enmap();
 client.economy_system = new Enmap();
-client.botcommands = new Enmap();
+client.info = new Enmap();
 
 client.config = config;
 client.cmdsN = cmds
@@ -149,51 +149,15 @@ fs.readdir("./commands/economy_system/", (err, files) => {
   });
 });
 
-fs.readdir("./commands/botcommands/", (err, files) => {
+fs.readdir("./commands/info/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
-    let props = require(`./commands/botcommands/${file}`);
+    let props = require(`./commands/info/${file}`);
     let commandName = file.split(".")[0];
     console.log(`carregado o comando: ${commandName}`);
-    client.botcommands.set(commandName, props);
+    client.info.set(commandName, props);
   });
-});
-
-
-client.on("guildMemberAdd", async (member) => {
-
-  let db = client.database.ref(`Servidores/S${member.guild.id}/painel/configuração/canais`);
-
-  db.once("value").then(async function(snap) {
-
-    if(snap.val() == null) {
-
-      return;
-    } else {
-      let chatID = snap.val().entrada
-      let chat = member.guild.channels.cache.get(chatID)
-      if(!chat) return;
-
-      let embed = new Discord.MessageEmbed()
-      .setColor(`${client.config.cor}`)
-      .author(`Novo Membro!!`, ``)
-      .setDescription(``)
-      .setTimestamp()
-      .setFooter(`Shion Bot ${client.config.v} by TeamShion`, ``)
-      
-    chat.send(embed)
-    }
-})
-
-  setTimeout(function () {
-
-  let tag = member.guild.roles.cache.get("681706134628728862")
-  if(!tag) return;
-  if(member.roles.cache.has(tag.id)) return;
-  member.roles.add(tag)
-
-}, parseInt(1000));
 });
 
 client.login(tokens.token);

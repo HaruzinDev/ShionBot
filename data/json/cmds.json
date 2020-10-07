@@ -1,12 +1,166 @@
 {
-    "comuns1": "**Comandos Comuns**\n[<> = obrigatorio, () = opcional]\n\n\n**BotInfo**\n**Usa**: dkbotinfo\nVeja as informações do bot.\n\n**avatar**\n**Usa**: dkavatar (id/menção)\nDownload do avatar da pessoa ou seu.\n\n**Userinfo**\n**Usa**: dkuserinfo (id/menção)\nVeja algumas informações da pessoa.\n\n**Ping**\n**Usa**: dkping\nVeja o ping do bot/api\n\n**Shipw**\n**Usa**: dkshipw (menção/id) <Nome da waifu>\nShipa você ou outra pessoa com uma Waifu\n\n",
-    "comuns2": "**Comandos Comuns**\n[<> = obrigatorio, () = opcional]\n\n\n**Background**\n**Usa**: dkbackground\nColoque um background personalizado no seu perfil.\n\n**Sobre mim**\n**Usa**: dksobremim <mensagem>\nDê um descrição sobre você.\n\n**Perfil**\n**Usa**: dkperfil (menção/id)\nVeja o perfil\n\n**Rank**\n**Usa**:\ndkrank\nVeja o top 50\n\n",
 
+"administrator": [
+    {
+        "nome": "addtag",
+        "usage": "addtag <id/menção do usuario> <id/menção da tag>",
+        "description": "Adicione tag a um membro"
+    },
+    {
+        "nome": "remtag",
+        "usage": "remtag <id/menção do usuario> <id/menção da tag>",
+        "description": "Remova tag de um membro"
+    }
+],
 
-    "mod": "**Comandos Moderação**\n[<> = obrigatorio, () = opcional]\n\n\n**Ban**\n**Usa**: dkban <id/menção> (razão)\nBanir um usuario.\n\n**Mute**\n**Usa**: dkmute <menção> 5[s/m/h/d] <motivo>\nMutar um usuario\n\n**Unmute**\n**Usa**: dkunmute <id/menção>\nDesmutar um usuario\n\n",
+"config": [
+    {
+        "nome": "setchatbanimento",
+        "usage": "setchatbanimento <id do chat>",
+        "description": "Seta o chat de banimento"
+    },
+    {
+        "nome": "setchatuplevel",
+        "usage": "setchatuplevel <id do chat>",
+        "description": "Seta o chat de notificação de UP level"
+    },
+    {
+        "nome": "setchatxp",
+        "usage": "setchatxp <id do chat1> <id do chat2>...",
+        "description": "Seta chats que contam o xp"
+    },
+    {
+        "nome": "setentrada",
+        "usage": "setentrada <id do canal>",
+        "description": "Setar chat de entrada do servidor"
+    },
+    {
+        "nome": "setmsguplevel",
+        "usage": "setmsguplevel <Mensagem entre o Nome do usuario e o Numero do nivel>",
+        "description": "Seta a mensagem de notificação do UP Level"
+    },
+    {
+        "nome": "systemxp",
+        "usage": "systemxp <active> || <desactive>",
+        "description": "Ativa ou desativa o sistema de xp"
+    },
+    {
+        "nome": "tagslevel",
+        "usage": "tagslevel <id tag nivel 10> <id tag nivel 25> <id tag nivel 30> <id tag nivel 45> <id tag nivel 50>",
+        "description": "Seta as 5 tags de rank"
+    },
+    {
+        "nome": "tagsmute",
+        "usage": "tagsmute <id tag mute> <id tag marcação1> <id tag marcação2>",
+        "description": "Seta tags para o sistema de mute"
+    },
+    {
+        "nome": "tagstoprank",
+        "usage": "tagstoprank <id top1> <id top2> <id top3>",
+        "description": "Seta tags para o top rank"
+    }
+],
 
+"economy_system": [
+    {
+        "nome": "leadboard",
+        "usage": "leadboard",
+        "description": "Veja o rank de dinheiro do servidor"
+    }
+],
 
-    "adm1": "**Comandos Administrador Geral**\n[<> = obrigatorio, () = opcional]\n\n\n**Setar canal de Ban**\ndksetcban <menção/id do canal>\n\n**Setar canal de registro**\ndksetcreg <menção/id do canal>\n\n**Setar canal de nivel**\ndksetclvl <menção/id do canal>\n\n**Setar mensagem de nivel up**\ndksetmsglvl <mensagem>\nAutor é no inicio e não precisa por ele e o nivel vem no final também não precisa por ele. Lembrando que se for por emoji tem que ser do server e não de fora\n\n**Resetar Rank**\ndkresetrank\nToma cuidado pois isso reseta tudo sem aviso previo. Além de deletar os perfis de todos do servidor\n\n", 
-    "adm2": "**Comandos Administrador Geral**\n[<> = obrigatorio, () = opcional]\n\n\n**Comando de setar tags para o sistema de nivel**\n**Usa**: dktagslevel <tag do nivel 10> <tag do nivel 20> <tag do nivel 30> <tag do nivel 45> <tag do nivel 50>\nLembrando que tem que ser por id\n\n**Tags de mute**\n**Usa**:\ndktagsmute <tagmutado id> <tag adv1 id> <tag adv2 id>\nEsse comando seta o id das tags para o comando de mute.\n\n**Comando de setar tag dos toprank**\n**Usa**:\ndktagstoprank <top1> <top2> <top3>\nLembrando que é por id\n\n**Comando de setar tag da staff de registro**\n**usa**:\ndktagreg <tag de registro>\nLembrando que é por id\n\n**Add Tag**\n**Usa**:\ndkaddtag <menção/id> <menção_da_tag/id>\n\n",
-    "adm3": "**Comandos Administrador Geral**\n[<> = obrigatorio, () = opcional]\n\n\n**Remover Tag**:\n**Usa**:\ndkremtag <menção/id> <menção_da_tag/id>\n\n**Chats de contagem de xp**:\n**Usa**: dksetcxp <coloque quantos id de chats quiser desde que separe com espaço>\n\n"
+"fun": [
+    {
+        "nome": "cookie",
+        "usage": "cookie <id/menção>",
+        "description": "Dê cookie a um membro de agradecimento"
+    },
+    {
+        "nome": "divorce",
+        "usage": "divorce <id/menção>",
+        "description": "Divorcie de um usuario"
+    },
+    {
+        "nome": "marry",
+        "usage": "marry <id/menção>",
+        "description": "Comando para se casar com alguém"
+    }
+],
+
+"info": [
+    {
+        "nome": "ajuda",
+        "usage": "ajuda (nome da categoria)",
+        "description": "Veja a lista de comandos"
+    },
+    {
+        "nome": "avatar",
+        "usage": "avatar (id/menção)",
+        "description": "Veja o avatar de uma pessoa"
+    },
+    {
+        "nome": "botinfo",
+        "usage": "botinfo",
+        "description": "Comando de ver informação sobre o bot"
+    },
+    {
+        "nome": "ping",
+        "usage": "ping",
+        "description": "Veja o ping do bot"
+    },
+    {
+        "nome": "userinfo",
+        "usage": "userinfo (id/menção)",
+        "description": "Veja as informações de certo usuario."
+    }
+],
+
+"moderation": [
+    {
+        "nome": "Ban",
+        "usage": "Ban <id/menção> (motivo)",
+        "description": "Comando de banimento"
+    },
+    {
+        "nome": "tempmute",
+        "usage": "tempmute <id/menção> 5[s/m/h/d] <motivo>",
+        "description": "Comando de mute com temporizador."
+    },
+    {
+        "nome": "unmute",
+        "usage": "unmute <id/menção>",
+        "description": "Comando de unmute"
+    },
+    {
+        "nome": "say",
+        "usage": "say <mensagem>",
+        "description": "Envie mensagem atráves do bot"
+    }
+],
+
+"utils": [
+    {
+        "nome": "bugreport",
+        "usage": "bugreport <mensagem informando sobre o bug (pode por links de imagens)>",
+        "description": "Comando para reportar bugs para o suporte do bot"
+    },
+    {
+        "nome": "upload",
+        "usage": "upload --proxima mensagem tem que ser enviada uma imagem.",
+        "description": "Gera links no imgur de uma imagem ou gif"
+    }
+],
+
+"xp_system": [
+    {
+        "nome": "resetrank",
+        "usage": "resetrank",
+        "description": "Comando de resetar o rank do servidor"
+    },
+    {
+        "nome": "sobremim",
+        "usage": "sobremim <mensagem nova do 'sobremim'",
+        "description": "Setar um novo 'sobremim' no perfil"
+    }
+]
 }

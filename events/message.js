@@ -26,7 +26,7 @@ module.exports = (client, message) => {
 
   const cmdadministrator = client.administrator.get(command);
   const cmdconfigurate = client.configurate.get(command);
-  const cmdbotcommands = client.botcommands.get(command);
+  const cmdinfo = client.info.get(command);
   const cmdeconomy_system = client.economy_system.get(command);
   const cmdfun = client.fun.get(command);
   const cmdmoderation = client.moderation.get(command);
@@ -64,9 +64,9 @@ module.exports = (client, message) => {
 
     cmdadministrator.run(client, message, args)
 
-  } else if(cmdbotcommands){
+  } else if(cmdinfo){
     
-    cmdbotcommands.run(client, message, args)
+    cmdinfo.run(client, message, args)
 
   } else {
     
