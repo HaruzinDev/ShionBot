@@ -1,7 +1,7 @@
 # ShionBot
 Um simples bot do Discord de moderação com sistema de xp e sistema de economia
 
-## Cartegoria de comandos
+## Categoria de comandos
 
 - Moderação
 
