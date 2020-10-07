@@ -1,0 +1,28 @@
+{
+  "name": "ShionBot",
+  "version": "1.0.0",
+  "description": "The Oficial Bot of EletroClub",
+  "main": "index.js",
+  "dependencies": {
+    "-": "0.0.1",
+    "discloud-status": "^0.1.6",
+    "discord.js": "^12.2.0",
+    "enmap": "^5.3.1",
+    "firebase": "^7.16.0",
+    "fs-extra": "^9.0.1",
+    "imgur-uploader": "^4.2.1",
+    "jimp": "^0.13.0",
+    "moment": "^2.27.0",
+    "ms": "^2.1.2",
+    "quick.db": "^7.1.2",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Haru-chan",
+  "license": "ISC"
+}

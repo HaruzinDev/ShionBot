@@ -1,0 +1,13 @@
+{
+    "prefix" : "sy!",
+    "cor": "#3e44d9",
+    "v": "v1.0",
+
+
+	"mask": "https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png",
+    "basesw": "https://imgur.com/EurnUHn.png",
+    "erroimg": "https://i.imgur.com/aAdL7jq.png",
+    "devimg": "https://i.imgur.com/Q7FHQRt.png",
+    "infoimg": "https://i.imgur.com/rjvMWSo.png",
+    "clockimg": "https://i.imgur.com/NA0YZjc.png"
+}
