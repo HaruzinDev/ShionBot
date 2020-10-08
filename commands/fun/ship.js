@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
 
     let aut = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]))
-    if(!aut) return message.channel.send('Opa, esqueceu de mencionar algu´me não?')
+    if(!aut) return message.channel.send('Opa, esqueceu de mencionar alguém não?')
 
 
     let menção = message.guild.member(message.mentions.users.last() || message.guild.members.cache.get(args[1]))
