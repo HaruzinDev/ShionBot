@@ -11,4 +11,8 @@ module.exports = async client => {
     }
     setStatus();
     setInterval(() => setStatus(), 20000)
+
+    const generatorHelp = require('../tools/generatorEmbedHelp.js')
+
+    generatorHelp.embedhelp(client)
 }

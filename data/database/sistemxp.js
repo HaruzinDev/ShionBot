@@ -1,8 +1,6 @@
 const sistemlvl = require('./sistemlvl.js')
 
 //sistema de xp
-let padrãoI = "https://i.imgur.com/in947uB.png"
-let sobremimP = "Use sy!sobremim <descrição> para colocar uma mensagem aqui"
 
 module.exports.sistemxp = async (client, message) => {
 
@@ -19,16 +17,7 @@ module.exports.sistemxp = async (client, message) => {
 
       if(snap.val() == null) {
 
-    db.set({
-
-      id: message.author.id,
-      xp: 0,
-      level: 1,
-      bgI: padrãoI,
-      sobremim: sobremimP,
-      cookie: 0
-
-    });
+        return;
   } else {
 
     xp = snap.val(). xp + pointsAdd;

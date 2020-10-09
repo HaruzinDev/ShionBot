@@ -14,7 +14,7 @@ module.exports.run = (client, message, args) => {
 
   if(membro.id === message.author.id) return message.channel.send('Você não pode dar cookie a si mesmo.')
   
-  let db = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/perfis/M${membro.id}`);
+  let db = client.databasePerfis.ref(`painel/perfis/M${membro.id}`);
 
   db.once("value").then(async function(snap) {
 
@@ -23,8 +23,6 @@ module.exports.run = (client, message, args) => {
       db.set({
 
         id: message.author.id,
-        xp: 0,
-        level: 1,
         bgI: padrãoI,
         sobremim: sobremimP,
         cookie: 1

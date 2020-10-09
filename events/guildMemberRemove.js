@@ -1,5 +1,4 @@
-module.exports = (client, member) => {
-
+module.exports = (client, member) => {//esse aqui limpa o firebase da pessoa
 let db = client.database.ref(`Servidores/S${member.guild.id}/painel/sistemxp/perfis/M${member.id}`);
 
 db.once("value").then(async function(snap) {

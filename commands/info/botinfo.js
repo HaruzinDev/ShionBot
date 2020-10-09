@@ -28,7 +28,7 @@ module.exports.run = async (client, message) => {
    .addFields(
        {name: `Prefixo:`, value: `${client.config.prefix}` , inline: true},
        {name: `Versão do bot:`, value: `${client.config.v}`, inline: true},
-       {name: `Total de comandos:`, value: `${client.cmdsN[0]}`, inline: true},
+       {name: `Total de comandos:`, value: `${client.cmdsN}`, inline: true},
        {name: `Total de membros:`, value: `${client.users.cache.size}`, inline: true},
        {name: `Total de servidors:`, value: `${client.guilds.cache.size}`, inline: true},
        {name: `Ping:`, value: `${clientms}`, inline: true},

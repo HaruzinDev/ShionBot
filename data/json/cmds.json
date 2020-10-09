@@ -2,18 +2,43 @@
 
 "administrator": [
     {
-        "nome": "addtag",
+        "nome": "addtagi",
         "usage": "addtag <id/menção do usuario> <id/menção da tag>",
         "description": "Adicione tag a um membro"
+    },
+    {
+        "nome": "emojicreate",
+        "usage": "emojicreate <nome do emoji> --na imagem seguinte envie a imagem do emoji",
+        "description": "adciona certo emoji ao servidor"
+    },
+    {
+        "nome": "addmoney",
+        "usage": "addmoney (banco) <id/menção>",
+        "description": "Adicione dinheiro na conta ou banco da pessoa"
+    },
+    {
+        "nome": "removemoney",
+        "usage": "removemoney <id/menção>",
+        "description": "Remove dinheiro da conta da pessoa"
     },
     {
         "nome": "remtag",
         "usage": "remtag <id/menção do usuario> <id/menção da tag>",
         "description": "Remova tag de um membro"
+    },
+    {
+        "nome": "anuncio",
+        "usage": "anuncio <mensagem>",
+        "description": "Faça um anuncio"
     }
 ],
 
 "config": [
+    {
+        "nome": "autorule",
+        "usage": "autorule <tag>",
+        "description": "Adicione e ative o sistema de autorole"
+    },
     {
         "nome": "setchatbanimento",
         "usage": "setchatbanimento <id do chat>",
@@ -66,6 +91,26 @@
         "nome": "leadboard",
         "usage": "leadboard",
         "description": "Veja o rank de dinheiro do servidor"
+    },
+    {
+        "nome": "daily",
+        "usage": "daily",
+        "description": "Pegue uma quantia bonus por dia"
+    },
+    {
+        "nome": "pagar",
+        "usage": "pagar <id/menção> <quantia>",
+        "description": "Pague uma pessoa"
+    },
+    {
+        "nome": "bal",
+        "usage": "bal (id/menção)",
+        "description": "Veja a carteira de uma pessoa."
+    },
+    {
+        "nome": "deposit",
+        "usage": "deposit <quantidade>",
+        "description": "Deposite uma quantidade de dinheiro no seu banco"
     }
 ],
 
@@ -109,6 +154,11 @@
         "nome": "pick",
         "usage": "pick <mensagem dividida por | mensagem>",
         "description": "Deixe que a Shion decida por você!"
+    },
+    {
+        "nome": "slap",
+        "usage": "slap <id/menção>",
+        "description": "Dê um tapa em alguém"
     }
 ],
 
@@ -137,6 +187,11 @@
         "nome": "userinfo",
         "usage": "userinfo (id/menção)",
         "description": "Veja as informações de certo usuario."
+    },
+    {
+        "nome": "convite",
+        "usage": "convite",
+        "description": "Veja o convite do bot e do servidor de suporte"
     }
 ],
 
@@ -173,19 +228,44 @@
         "nome": "upload",
         "usage": "upload --proxima mensagem tem que ser enviada uma imagem.",
         "description": "Gera links no imgur de uma imagem ou gif"
+    },
+    {
+        "nome": "translate",
+        "usage": "traslate <linguagem> <mensagem que queira traduzir>",
+        "description": "Traduza um texto"
     }
 ],
 
 "xp_system": [
     {
+        "nome": "perfil",
+        "usage": "perfil (id/menção)",
+        "description": "Veja o perfil de uma pessoa"
+    },
+    {
+        "nome": "background",
+        "usage": "background --na mensagem seguinte deve mandar uma imagem",
+        "description": "Muda seu background `comando premium`"
+    },
+    {
+        "nome": "criarperfil",
+        "usage": "criarperfil",
+        "description": "Cria um perfil no sistema do bot"
+    },
+    {
         "nome": "resetrank",
         "usage": "resetrank",
-        "description": "Comando de resetar o rank do servidor"
+        "description": "Comando de resetar o rank do servidor `comando premium`"
     },
     {
         "nome": "sobremim",
         "usage": "sobremim <mensagem nova do 'sobremim'",
         "description": "Setar um novo 'sobremim' no perfil"
+    },
+    {
+        "nome": "rank",
+        "usage": "rank",
+        "description": "Veja o rank de xp do servidor"
     }
 ]
 }

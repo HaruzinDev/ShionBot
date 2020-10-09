@@ -8,11 +8,11 @@ module.exports.perfilI = async (client, message, idu, xp, level, bgI, cookie, so
     let usuario = idu.avatarURL({format: 'png', size: 2048});
     let fonte = await jimp.loadFont(jimp.FONT_SANS_64_WHITE)   
     let background = await jimp.read(`${bgI}`)
+    
 
     jimp.read(`${client.config.mask}`).then(mascara => {
     jimp.read(`./images/layout/PerfilI.png`).then(baseP => {
     jimp.read(`./images/layout/transparente.png`).then(transparente => {
-
 
     jimp.read(usuario).then(avatar => {
         avatar.resize(592, 592)
@@ -38,7 +38,6 @@ module.exports.perfilI = async (client, message, idu, xp, level, bgI, cookie, so
 
 
 module.exports.perfilIC = async (client, message, idu, xp, level, bgI, cookie, sobremim, marry) => {
-
     let fonte = await jimp.loadFont(jimp.FONT_SANS_64_WHITE)   
     let background = await jimp.read(`${bgI}`)
     let usuario = idu.avatarURL({format: 'png', size: 2048});

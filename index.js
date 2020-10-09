@@ -6,23 +6,9 @@ const client = new Discord.Client();
 
 const tokens = require("./data/token/tokens.json");
 const config = require("./data/config/config.json");
+const cmdD = require('./data/json/cmds.json')
 
-let cmds = ["0"];
-
-var firebaseConfig = {
-    apiKey: `${tokens.apiKey}`,
-    authDomain: `${tokens.authDomain}`,
-    databaseURL: `${tokens.databaseURL}`,
-    projectId: `${tokens.projectId}`,
-    storageBucket: `${tokens.storageBucket}`,
-    messagingSenderId: `${tokens.messagingSenderId}`,
-    appId: `${tokens.appId}`,
-    measurementId: `${tokens.measurementId}`
-};
-
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-
+let cmds = cmdD.administrator.length + cmdD.config.length + cmdD.economy_system.length + cmdD.fun.length + cmdD.info.length + cmdD.moderation.length + cmdD.utils.length + cmdD.xp_system.length;
 
 client.administrator = new Enmap();
 client.configurate = new Enmap();
@@ -35,7 +21,6 @@ client.info = new Enmap();
 
 client.config = config;
 client.cmdsN = cmds
-client.database = database;
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
@@ -54,8 +39,6 @@ fs.readdir("./commands/administrator/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/administrator/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.administrator.set(commandName, props);
   });
@@ -69,8 +52,6 @@ fs.readdir("./commands/utils/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/utils/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.utils.set(commandName, props);
   });
@@ -84,8 +65,6 @@ fs.readdir("./commands/fun/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/fun/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.fun.set(commandName, props);
   });
@@ -99,8 +78,6 @@ fs.readdir("./commands/moderation/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/moderation/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.moderation.set(commandName, props);
   });
@@ -114,8 +91,6 @@ fs.readdir("./commands/configurate/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/configurate/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.configurate.set(commandName, props);
   });
@@ -129,8 +104,6 @@ fs.readdir("./commands/xp_system/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/xp_system/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.xp_system.set(commandName, props);
   });
@@ -142,8 +115,6 @@ fs.readdir("./commands/economy_system/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/economy_system/${file}`);
     let commandName = file.split(".")[0];
-    let numero = cmds[0]++;
-    cmds.push(numero)
     console.log(`carregado o comando: ${commandName}`);
     client.economy_system.set(commandName, props);
   });
@@ -159,5 +130,12 @@ fs.readdir("./commands/info/", (err, files) => {
     client.info.set(commandName, props);
   });
 });
+
+
+const { firebaseShion1, firebaseShion2 } = require('./data/database/loginFirebase.js')
+
+firebaseShion1(client, firebase, tokens)
+
+firebaseShion2(client)
 
 client.login(tokens.token);

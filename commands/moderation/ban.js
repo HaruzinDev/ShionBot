@@ -24,16 +24,6 @@ module.exports.run = async (client, message, args) => {
     if(pessoa.id === message.author.id) return message.channel.send('Oloko. Você não pode se banir. <:denkipensante:728158933855895584>')
     pessoa1 = pessoa.user
 
-    if(pessoa.roles.cache.has("742953609020440606")) {//742953609020440606
-        return message.reply(`Pq diabos vc quer banir alguém da staff?`)
-    } else if(pessoa.roles.cache.has("742953668952981556")) {
-        return message.reply(`Pq diabos vc quer banir alguém da staff?`)
-    } else if(pessoa.roles.cache.has("742953903922085900")) {
-        return message.reply(`Pq diabos vc quer banir alguém da staff?`)
-    }  else if(pessoa.roles.cache.has("742953753191383132")) {
-        return message.reply(`Pq diabos vc quer banir alguém da staff?`)
-    } else {
-
     let bc = message.guild.channels.cache.get(canal)
     if(!bc) return message.channel.send(`Não foi possivel achar o chat de banimento.`)
 
@@ -75,7 +65,6 @@ module.exports.run = async (client, message, args) => {
         message.reply('Banimento feito.')
 
 	}, parseInt(2000));
-    }
    }
   })
 }

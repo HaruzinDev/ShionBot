@@ -2,6 +2,8 @@ const erros = require('../tools/erros.js');
 const checkChannelsXP = require('../data/database/sistemCheckChannels.js')
 
 module.exports = (client, message) => {
+
+
   if(message.author.bot) return;
   if(message.channel.type === "dm") return message.author.send('Olá pessoa. Infelizmente eu não respondo DM. Use algum comando apenas em servidor oq?')
 
@@ -40,7 +42,7 @@ module.exports = (client, message) => {
 
     cmdconfigurate.run(client, message, args)
 
-  }else if(cmdeconomy_system){
+  }else if(cmdeconomy_system){//qual o comando que você tá fazendo?
 
     cmdeconomy_system.run(client, message, args)
   

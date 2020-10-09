@@ -5,9 +5,9 @@ module.exports.run = (client, message, args) => {
 
   if(membro.id === message.author.id) return message.channel.send('Como assim cara você mesmo não se aguenta mais?')
 
-  let db = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/perfis/M${message.author.id}`);
+  let db = client.databasePerfis.ref(`painel/perfis/M${message.author.id}`);
   
-  let db2 = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/perfis/M${membro.id}`);
+  let db2 = client.databasePerfis.ref(`painel/perfis/M${membro.id}`);
 
   db.once("value").then(async function(snap) {
   

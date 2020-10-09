@@ -1,6 +1,9 @@
 module.exports.run = (client, message, args) => {
 
-    let db = client.database.ref(`Servidores/S${message.guild.id}/painel/configuração/autorole`)//vou ver como tá a database lá
+    if(!message.member.hasPermission("ADMINISTRATOR")) return
+
+
+    let db = client.databasePerfis.ref(`Servidores/S${message.guild.id}/painel/configuração/autorole`)//vou ver como tá a database lá
 
     if(!args[0]) return message.channel.send('Você tem que mencionar ou colocar id de alguma tag')
 

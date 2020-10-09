@@ -1,7 +1,6 @@
 module.exports.sistemCheckChannels = (client, message) => {
 
     const sistemxp = require('./sistemxp.js');
-    const sistemtrespri = require('./sistemtrespri.js')
     
     let channelsForSistemXP = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/canais/`).orderByChild('id')
 
@@ -26,7 +25,6 @@ module.exports.sistemCheckChannels = (client, message) => {
 
       if(message.channel.id === `${objetosChannels[i].id}`) {
       sistemxp.sistemxp(client, message);
-      sistemtrespri.sistemtrespri(client, message);
       }
     }
   })

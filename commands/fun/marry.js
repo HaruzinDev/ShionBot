@@ -11,9 +11,9 @@ module.exports.run = (client, message, args) => {
 
   if(membro.id === "763206138421968947") return message.channel.send('Você não pode se casar comigo! Quem sabe outro dia tá?')
 
-  let db = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/perfis/M${message.author.id}`);
+  let db = client.databasePerfis.ref(`painel/perfis/M${message.author.id}`);
   
-  let db2 = client.database.ref(`Servidores/S${message.guild.id}/painel/sistemxp/perfis/M${membro.id}`);
+  let db2 = client.databasePerfis.ref(`painel/perfis/M${membro.id}`);
 
   db.once("value").then(async function(snap) {
   
@@ -21,14 +21,12 @@ module.exports.run = (client, message, args) => {
     db.set({
 
       id: message.author.id,
-      xp: 0,
-      level: 1,
       bgI: padrãoI,
       sobremim: sobremimP,
       cookie: 0
 
       })
-      return message.channel.send('Tenta novamente.')    
+      return message.channel.send('Seu perfil foi criado, Tenta novamente.')    
   }
 
   let casado1 = snap.val().marry;
@@ -41,14 +39,12 @@ module.exports.run = (client, message, args) => {
 
       db2.update({
       id: membro.id,
-      xp: 0,
-      level: 1,
       bgI: padrãoI,
       sobremim: sobremimP,
       cookie: 0
 
       })
-      return message.channel.send('Tenta novamente.')
+      return message.channel.send('O perfil dessa pessoa foi criado foi criado, Tenta novamente.')
     }
     
     let casado2 = snap.val().marry;
