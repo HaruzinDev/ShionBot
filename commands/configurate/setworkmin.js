@@ -2,9 +2,8 @@ const db = require('quick.db')
 const Discord = require('discord.js')
 
 
-module.exports = {
-    name: 'setworkmin',
-	async execute(message, args, client) {
+module.exports.run = async (client, message, args) => {
+
 
     const min = args.join(" ")
 
@@ -21,7 +20,4 @@ module.exports = {
     } catch (e) {
         message.channel.send("Ocorreu um erro ao setar o valor mínimo do work.")
     }
-
-
     }
-}
