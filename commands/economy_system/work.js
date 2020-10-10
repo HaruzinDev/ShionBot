@@ -1,9 +1,7 @@
 const db = require('quick.db')
 const Discord = require('discord.js')
 
-module.exports = {
-    name: 'work',
-	async execute(message, args, client) {
+module.exports.run = async (client, message, args) => {
 
         if(!args[0]) return message.channel.send("Você não disse um trabalho! Trabalhos disponíveis: programador")
     
@@ -51,4 +49,4 @@ module.exports = {
                         }
                     }
                 }
-            }
+            
