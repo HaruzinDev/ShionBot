@@ -2,9 +2,7 @@ const db = require('quick.db')
 const Discord = require('discord.js')
 
 
-module.exports = {
-    name: 'setworkmax',
-	async execute(message, args, client) {
+module.exports.run = async (client, message, args) => {
 
         const max = args.join(" ")
 
@@ -22,4 +20,3 @@ module.exports = {
             message.channel.send("Ocorreu um erro ao setar o valor maximo do work.")
         }
     }
-}
