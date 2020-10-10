@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     if(dailytotal === null) dailytotal = 500
 
     let dailymin = await db.fetch(`dailymin_${message.guild.id}`)
-    if(dailytotal === null) dailymin = 0
+    if(dailymin === null) dailymin = 0
 
     let namecoin = await db.fetch(`coin_${message.guild.id}`)
     if(namecoin === null) namecoin = "ShionCoin"
