@@ -16,8 +16,3 @@ Um simples bot do Discord de moderação com sistema de xp e sistema de economia
 - Ultilidades
 
 - Configuração
-
-- Administração
-
-## Suporte
-
